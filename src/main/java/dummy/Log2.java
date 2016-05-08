@@ -10,13 +10,13 @@ public class Log2 {
 
     public void main() {
         try {
-            MDC.put("product", "Shampoo");
-            logger.info("staring at the screen");
+            MDC.put("process", "import");
+            logger.info("staring importing");
 
         } finally {
-            MDC.remove("product");
+            MDC.remove("process");
         }
-        logger.info("browsing done");
+        logger.info("importing done");
     }
 
 }

@@ -1,22 +1,22 @@
 package dummy;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 
+@Slf4j
 public class Log2 {
-
-    Logger logger = LoggerFactory.getLogger(Log2.class);
 
     public void main() {
         try {
             MDC.put("process", "import");
-            logger.info("staring importing");
+            log.info("staring importing");
 
         } finally {
             MDC.remove("process");
         }
-        logger.info("importing done");
+        log.info("importing done");
     }
 
 }

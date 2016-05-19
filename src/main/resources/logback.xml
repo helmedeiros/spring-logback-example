@@ -1,8 +1,8 @@
 <configuration debug="false">
 
     <appender name="SERVER_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%X] [%thread] %-5level %logger{36} - %msg%n</pattern>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>[%-5level]-[%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-Forwarded-For},%X{X-Gid-Client-Session}]-[%thread]-[%date{dd MMM yyyy;HH:mm:ss.SSS,UTC}]-[%logger{0}:%method:%line] - %msg %ex{full}%n                </pattern>
         </encoder>
     </appender>
     <appender name="SERVER_CONSOLE_ASYNC" class="ch.qos.logback.classic.AsyncAppender">
